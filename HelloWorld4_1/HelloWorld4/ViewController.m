@@ -29,23 +29,7 @@
 	 myView.text = [myView.text stringByAppendingString:txt];
 	
 	}
-
-}
-
-
--(void)findAndResignFirstResponder{
-	for (UIView *aView in [self.view subviews]){
-		if ([aView isFirstResponder] ) {
-			[aView resignFirstResponder];
-		}
-	}
-}
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-	for (UITouch *touch in touches){
-		if (touch.view == self.view){
-			[self findAndResignFirstResponder];
-		}
-	}
+	[ self.view endEditing: YES ];
 }
 
 
