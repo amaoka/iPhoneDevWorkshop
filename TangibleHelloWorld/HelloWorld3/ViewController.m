@@ -50,29 +50,30 @@
 		NSLog(@"began");
 		[myText setShadowColor:[UIColor whiteColor]];
 		myText.center = CGPointMake(myText.center.x+2, myText.center.y+5);
-		touchStatus=TRUE;
+		
 	}
 }
 
 //mouseReleased in Processing
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-	if(touchStatus){
+	UITouch *aTouch = [touches anyObject];
+	if(aTouch.view.tag == myText.tag){
 
 		NSLog(@"ended");
 		[myText setShadowColor:[UIColor grayColor]];
 		myText.center = CGPointMake(myText.center.x-2, myText.center.y-5);
-		touchStatus = FALSE;
+		
 	}
 }
 //mouseMoved in Processing
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 	
 	UITouch *aTouch = [touches anyObject];
-	//CGPoint is almost same as PVector
-	CGPoint loc = [aTouch locationInView:self.view];
-    //loc.x = mouseX,  loc.y = mouseY
-	//check whether touch position is close to UILabel
-	if(touchStatus){
+	if(aTouch.view.tag == myText.tag){
+		//CGPoint is almost same as PVector
+		CGPoint loc = [aTouch locationInView:self.view];
+		//loc.x = mouseX,  loc.y = mouseY
+		//check whether touch position is close to UILabel
 		myText.center = loc;
 	}
 }
