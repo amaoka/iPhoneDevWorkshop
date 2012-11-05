@@ -25,9 +25,9 @@
 
 	int num = [myField.text intValue];
 	myView.text = @"";
-	if(num<0){
+	if(num<=0){
 		
-		myView.text = @"Enter a integer number bigger than 0.";
+		myView.text = @"Enter a integer value bigger than 0.";
 		
 	}else{
 	
@@ -37,6 +37,7 @@
 	
 		}
 	}
+	NSLog(@"%d",num);
 	[ self.view endEditing: YES ];
 }
 
