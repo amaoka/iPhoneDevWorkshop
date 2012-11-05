@@ -46,4 +46,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+/*
+**************Another way to hide the keyboard*****************
+ 
+-(void)findAndResignFirstResponder{
+	for (UIView *aView in [self.view subviews]){
+		if ([aView isFirstResponder] ) {
+			[aView resignFirstResponder];
+		}
+	}
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+	for (UITouch *touch in touches){
+		if (touch.view == self.view){
+			[self findAndResignFirstResponder];
+		}
+	}
+}
+ 
+*/
 @end
