@@ -11,10 +11,9 @@
 @interface ViewController : UIViewController{
 
 	IBOutlet UILabel *myText;
-	IBOutlet UISwitch *sw;
+//	IBOutlet UISwitch *sw;
 	Boolean touchStatus;
 }
 
--(IBAction)switchStatus:(id)sender;
 
 @end
